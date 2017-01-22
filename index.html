@@ -1,0 +1,72 @@
+<body>
+<script>
+    var bankAct = prompt("Please tell me how much money is in your bank account");
+    var TAX_RATE = 0.08;
+    var phonePrice = 99.99;
+    var phoneAcc = 9.99;
+    var totalPrice = 0;
+    var bankActStart = bankAct;
+    
+    
+    while (bankAct > phonePrice) {
+        //take phone price out of bank account    
+        bankAct -= phonePrice;
+        //running total of purchase added 
+        totalPrice += phonePrice;
+        //add on the accessory if you can afford it
+        if (bankAct > phonePrice + phoneAcc) {
+            bankAct -= phoneAcc;
+            totalPrice += phoneAcc;
+        }
+        
+    }
+    function totalWithTax(amt) {
+        //calculate total amount with tax
+        amt += (amt * TAX_RATE);
+        return amt;
+        //return the new amount
+    }
+    function formatTotal(amt) {
+    return "$" + amt.toFixed( 2 );
+    //format the total
+    }
+    console.log(formatTotal(totalWithTax(totalPrice)));
+    //add tax to the total to see if you can afford it after all
+    if (bankActStart > (totalPrice + (totalPrice * TAX_RATE))) {
+        console.log("You can afford it!");
+        }
+        else {
+            console.log("Too much!");
+        }
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </script></body>
